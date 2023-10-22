@@ -1,0 +1,13 @@
+{
+  "name": "getting_started_node",
+  "version": "1.0.0",
+  "description": "aplicação de estudo de nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["aula", "getting started"],
+  "author": "Luiz",
+  "license": "ISC"
+}
