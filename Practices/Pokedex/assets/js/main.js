@@ -1,6 +1,3 @@
-const offset = 0;
-const limit = 10;
-
 const pokemonOl = document.getElementById('pokemonList')
 
 function convertPokemonToLi(pokemon) {
@@ -22,13 +19,7 @@ function convertPokemonToLi(pokemon) {
 }
 
 pokeApi.getPokemons()
-    .then((pokemons) => {
-        let listItems = []
-        for (let index = 0; index < pokemons.length; index++) {
-            const element = pokemons[index];
-            listItems.push(convertPokemonToLi(element));
-            
-        }
-        pokemonOl.innerHTML += listItems;
+    .then((pokemons = []) => {
+        pokemonOl.innerHTML += pokemons.map(convertPokemonToLi).join('');
     })
     .catch((error) => console.log(error))
