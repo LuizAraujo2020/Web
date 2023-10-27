@@ -1,13 +1,13 @@
 const pokemonOl = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
-const maxRecords = 16;
-const limit = 5;
+const maxRecords = 151;
+const limit = 10;
 let offset = 0;
 
 function loadPokemonsItems(offset, limit) {
 
-    pokeApi.getPokemons()
+    pokeApi.getPokemons(offset, limit)
         .then((pokemons = []) => {
             pokemonOl.innerHTML += pokemons.map((pokemon) => `
                 <li class="pokemon ${pokemon.type}">
